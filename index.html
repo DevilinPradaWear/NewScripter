@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Facebook CAPTCHA Challenge</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: white;
+      border: 1px solid #dddfe2;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    h1 {
+      color: #1877f2;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    p {
+      color: #606770;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .g-recaptcha {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #1877f2;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background-color: #bcc0c4;
+      cursor: not-allowed;
+    }
+    footer {
+      font-size: 12px;
+      color: #606770;
+      margin-top: 20px;
+    }
+  </style>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Security Check</h1>
+    <p>Please confirm you're not a robot to continue to Facebook.</p>
+
+    <div class="g-recaptcha" data-sitekey="6Lex_SArAAAAABRopN4ZMc1wJDMyIGCQhW4whcI1" data-callback="recaptchaSuccess"></div>
+
+    <button id="proceedBtn" disabled>Proceed to Facebook</button>
+
+    <footer>
+      Facebook © 2024. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    function recaptchaSuccess(token) {
+      document.getElementById("proceedBtn").disabled = false;
+    }
+
+    document.getElementById("proceedBtn").addEventListener("click", function () {
+      window.location.href = "/post.html";
+    });
+  </script>
+</body>
+</html>

